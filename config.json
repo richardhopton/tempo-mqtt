@@ -1,0 +1,35 @@
+{
+  "name": "Tempo MQTT",
+  "version": "1.0.0",
+  "slug": "tempo-mqtt",
+  "description": "A Home Assistant add-on to enable Tempo data.",
+  "url": "https://github.com/richardhopton/tempo-mqtt",
+  "startup": "application",
+  "arch": ["aarch64", "amd64", "armhf", "armv7", "i386"],
+  "boot": "auto",
+  "services": ["mqtt:need"],
+  "options": {
+    "mqtt_host": "<auto_detect>",
+    "mqtt_port": "<auto_detect>",
+    "mqtt_user": "<auto_detect>",
+    "mqtt_password": "<auto_detect>",
+    "user_map": [
+      { "id": "fd7588d4-a694-11ed-afa1-0242ac120002", "name": "User 1" },
+      { "id": "054cf092-a695-11ed-afa1-0242ac120002", "name": "User 2" }
+    ],
+    "known_hosts": ["Tempo-R000U000"]
+  },
+  "schema": {
+    "mqtt_host": "str",
+    "mqtt_port": "str",
+    "mqtt_user": "str",
+    "mqtt_password": "password",
+    "user_map": [
+      {
+        "id": "str",
+        "name": "str"
+      }
+    ],
+    "known_hosts": ["str"]
+  }
+}
